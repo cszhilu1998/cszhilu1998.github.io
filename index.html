@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Zhilu Zhang (张志路) — Research Scientist at Singapore Management University. Research interests: low-level vision, 3D vision, and wolrd models.">
-<meta name="keywords" content="Zhilu Zhang, 张志路, Computer Vision, Deep Learning, Image Restoration, 3D Vision, World Models, HIT">
+<meta name="description" content="Zhilu Zhang (张志路) — Research Scientist at Singapore Management University. Research interests: world models, 3D vision, low-level vision.">
+<meta name="keywords" content="Zhilu Zhang, 张志路, Computer Vision, Deep Learning, World Models, 3D Vision, Image Restoration, HIT">
 <meta name="author" content="Zhilu Zhang">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Zhilu Zhang | Computer Vision Researcher">
-<meta property="og:description" content="Research Scientist at Singapore Management University. Research Interest: low-level vision, 3D vision, world models.">
+<meta property="og:description" content="Research Scientist at Singapore Management University. Research Interest: world models, 3D vision, low-level vision.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="zhilu.JPG">
 <meta property="og:locale" content="en_US">
@@ -17,35 +17,49 @@
 <title>Zhilu Zhang | Computer Vision Researcher</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ink:   #18181f;
-  --ink2:  #46465a;
-  --ink3:  #9898b0;
-  --bg:    #f8f8fc;
-  --bg2:   #eeeef8;
-  --bg3:   #e4e4f4;
-  --acc:   #4f5ec7;
-  --acc2:  #7280d8;
-  --warm:  #d95f5f;
-  --border: rgba(79,94,199,0.13);
-  --border2: rgba(79,94,199,0.24);
+  --ink:   #172033;
+  --ink2:  #465166;
+  --ink3:  #627087;
+  --bg:    #fbfcfe;
+  --bg2:   #edf4ff;
+  --bg3:   #e1edff;
+  --acc:   #315FC1;
+  --acc2:  #7EA6EB;
+  --warm:  #B34E5D;
+  --warm-hover: #A94453;
+  --accent-text: #fff;
+  --accent-hover: #264D9F;
+  --badge-text: #52698A;
+  --badge-bg: #F0F4FA;
+  --badge-border: #DCE4EF;
+  --border: rgba(49,95,193,0.12);
+  --border2: rgba(49,95,193,0.25);
   --serif: 'DM Serif Display', Georgia, serif;
   --sans:  'DM Sans', sans-serif;
   --mono:  'DM Mono', monospace;
   --r:     6px;
-  --w:     820px;
+  --w:     980px;
   --nav-h: 56px;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --ink:   #e8e8f0;
-    --ink2:  #b0b0c8;
-    --ink3:  #7878a0;
-    --bg:    #0f0f14;
-    --bg2:   #1a1a24;
-    --bg3:   #252532;
+    --ink:   #edf2fa;
+    --ink2:  #bdcadd;
+    --ink3:  #a6b4c9;
+    --acc:   #A5C2FF;
+    --warm:  #E99AA6;
+    --warm-hover: #E99AA6;
+    --accent-text: #0F0F14;
+    --accent-hover: #BBD2FF;
+    --badge-text: #B5C7E2;
+    --badge-bg: #202D40;
+    --badge-border: #394B65;
+    --bg:    #111824;
+    --bg2:   #1c283b;
+    --bg3:   #25344c;
     --border: rgba(114,128,216,0.15);
     --border2: rgba(114,128,216,0.28);
   }
@@ -72,13 +86,13 @@ body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-
 nav {
   position: fixed; top: 0; inset-inline: 0; z-index: 200;
   height: var(--nav-h);
-  background: rgba(248,248,252,0.90); backdrop-filter: blur(18px) saturate(1.2);
+  background: rgba(251,252,254,0.94); backdrop-filter: blur(18px) saturate(1.2);
   border-bottom: 1px solid var(--border);
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 clamp(20px, 5vw, 56px);
 }
 @media (prefers-color-scheme: dark) {
-  nav { background: rgba(15,15,20,0.88); }
+  nav { background: rgba(17,24,36,0.92); }
 }
 .nav-logo { font-family: var(--serif); font-size: 18px; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
 .nav-links { display: flex; gap: clamp(16px, 3vw, 32px); list-style: none; }
@@ -101,12 +115,9 @@ nav {
   border-radius: 50%; object-fit: cover; display: block;
   border: 3px solid var(--bg3);
   box-shadow: 0 4px 20px rgba(79,94,199,0.15);
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  transition: border-color 0.2s ease;
 }
-.avatar-img:hover {
-  transform: scale(1.08) rotate(3deg);
-  box-shadow: 0 12px 40px rgba(79,94,199,0.35);
-}
+.avatar-img:hover { border-color: var(--border2); }
 .avatar-fallback {
   width: clamp(80px, 14vw, 120px); height: clamp(80px, 14vw, 120px);
   border-radius: 50%; background: var(--bg3); display: none;
@@ -128,7 +139,7 @@ nav {
 /* Bio */
 .hero-bio {
   font-size: clamp(14px, 1.8vw, 16px); line-height: 1.8; color: var(--ink2);
-  max-width: 640px; margin-bottom: 28px;
+  max-width: 680px; margin-bottom: 28px;
   border-left: 3px solid var(--acc); padding-left: 18px;
 }
 .hero-bio strong { color: var(--ink); font-weight: 500; }
@@ -137,28 +148,18 @@ nav {
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 10px 22px; font-size: 14px; font-family: var(--sans);
-  text-decoration: none; border-radius: 30px; transition: all .25s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none; border-radius: 30px; transition: background-color .2s ease;
   letter-spacing: 0.01em; font-weight: 500; white-space: nowrap;
 }
 .btn svg { width: 18px; height: 18px; fill: currentColor; }
 .btn-primary,
 .btn-outline {
-  background: var(--acc2);
-  color: #fff;
+  background: var(--acc);
+  color: var(--accent-text);
   border: none;
 }
 .btn-primary:hover,
-.btn-outline:hover {
-  background: var(--acc);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(79,94,199,0.25);
-}
-/* .btn-primary:hover,
-.btn-outline:hover {
-  background: var(--acc2);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(121, 79, 199, 0.25)
-} */
+.btn-outline:hover { background: var(--accent-hover); }
 /* Tags */
 .research-tags p { font-family: var(--mono); font-size: 15px; letter-spacing: 0.09em; color: var(--ink3); margin-bottom: 15px; }
 .tags { display: flex; gap: 15px; flex-wrap: wrap; }
@@ -167,11 +168,17 @@ nav {
 /* ── SECTIONS ── */
 .section { border-top: 1px solid var(--border); padding: clamp(48px, 7vh, 72px) 0; }
 .section-header { display: flex; align-items: baseline; gap: 14px; margin-bottom: 44px; }
-.section-num { font-family: var(--mono); font-size: 15px; color: var(--acc); letter-spacing: 0.12em; opacity: 0.6; }
+.section-num { font-family: var(--mono); font-size: 15px; color: var(--ink3); letter-spacing: 0.12em; }
 .section-title { font-family: var(--serif); font-size: clamp(26px, 3.5vw, 34px); letter-spacing: -0.02em; color: var(--ink); }
 
 /* ── TIMELINE ── */
 .timeline {
+  --timeline-card: var(--bg);
+  --timeline-border: var(--border);
+  --timeline-line: #dfe3ea;
+  --supervisor-link: #405E88;
+  --supervisor-link-hover: #2D466B;
+  --timeline-pressed: var(--bg2);
   position: relative;
   padding-left: 28px;
 }
@@ -182,26 +189,24 @@ nav {
   top: 20px;
   bottom: 20px;
   width: 2px;
-  background: linear-gradient(180deg, var(--acc), var(--acc2) 50%, var(--acc));
+  background: var(--timeline-line);
   border-radius: 2px;
-  opacity: 0.6;
 }
 .timeline-item {
   position: relative;
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  align-items: start;
+  gap: 0 24px;
   padding: 20px 24px;
   margin-bottom: 16px;
-  background: var(--bg2);
-  border: 1px solid var(--border);
+  background: var(--timeline-card);
+  border: 1px solid var(--timeline-border);
   border-radius: 12px;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 8px rgba(79,94,199,0.06);
+  transition: background-color .2s ease, border-color .2s ease;
 }
-.timeline-item:hover {
-  transform: translateY(-4px) translateX(4px);
-  box-shadow: 0 8px 24px rgba(79,94,199,0.12);
-  border-color: var(--border2);
-  background: var(--bg);
-}
+.timeline-item:hover { border-color: var(--border2); background: var(--bg2); }
+.timeline-item:active { background: var(--timeline-pressed); }
 .timeline-item::before {
   content: '';
   position: absolute;
@@ -211,16 +216,12 @@ nav {
   height: 12px;
   border-radius: 50%;
   background: var(--bg);
-  border: 3px solid var(--acc);
+  border: 3px solid #A69BB8;
   box-shadow: 0 0 0 3px var(--bg);
   transition: all 0.3s ease;
   z-index: 2;
 }
-.timeline-item:hover::before {
-  background: var(--acc);
-  transform: scale(1.2);
-  box-shadow: 0 0 0 3px var(--bg), 0 0 20px rgba(79,94,199,0.5);
-}
+.timeline-item:hover::before { background: #8275A5; border-color: #8275A5; }
 .timeline-item::after {
   content: '';
   position: absolute;
@@ -228,25 +229,37 @@ nav {
   top: 33px;
   width: 12px;
   height: 2px;
-  background: var(--border2);
-  transition: all 0.3s ease;
+  background: var(--timeline-line);
+  transition: background-color .2s ease;
 }
-.timeline-item:hover::after {
-  background: var(--acc);
-  width: 16px;
-}
+.timeline-item:active::after { background: var(--acc); }
 .timeline-item:last-child { margin-bottom: 0; }
 .timeline-date {
-  display: inline-block;
+  display: grid;
+  align-self: center;
+  justify-items: center;
+  gap: 2px;
+  width: 100%;
   font-family: var(--mono);
   font-size: 12px;
-  color: var(--acc);
-  background: var(--bg3);
-  padding: 4px 12px;
-  border-radius: 20px;
-  margin-bottom: 10px;
-  letter-spacing: 0.05em;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--ink2);
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  letter-spacing: 0.01em;
   font-weight: 500;
+}
+.timeline-date > span:nth-child(2) { color: var(--ink3); }
+@media (prefers-color-scheme: dark) {
+  .timeline {
+    --timeline-line: #363645;
+    --supervisor-link: #9DB9DF;
+    --supervisor-link-hover: #BDD2EF;
+  }
 }
 .timeline-role {
   font-size: 16px;
@@ -267,6 +280,7 @@ nav {
   font-size: 13px;
   opacity: 0.8;
 }
+.timeline-place-city::before { content: '🏢'; }
 .timeline-place2::before {
   content: '🏢';
   font-size: 13px;
@@ -278,16 +292,16 @@ nav {
   margin-top: 8px;
   padding-top: 8px;
   border-top: 1px dashed var(--border);
-  font-style: italic;
+  font-style: normal;
 }
 .timeline-detail a {
-  color: var(--acc);
+  color: var(--supervisor-link);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
 }
 .timeline-detail a:hover {
-  color: var(--acc2);
+  color: var(--supervisor-link-hover);
   text-decoration: underline;
 }
 
@@ -297,24 +311,22 @@ nav {
 }
 .papers-tab {
   padding: 6px 16px; font-size: 13px; cursor: pointer;
-  font-family: var(--mono); letter-spacing: 0.02em; white-space: nowrap;
+  font-family: var(--sans); letter-spacing: 0; white-space: nowrap;
   background: transparent; border: 1px solid var(--border); border-radius: 30px;
   color: var(--ink3); transition: all .2s;
 }
-.papers-tab.active { color: #fff; background: var(--acc); border-color: var(--acc); }
+.papers-tab.active { color: var(--accent-text); background: var(--acc); border-color: var(--acc); }
 .papers-tab:hover { color: var(--ink); border-color: var(--acc); }
-.papers-tab.active:hover { color: #fff; }
+.papers-tab.active:hover { color: var(--accent-text); }
 .paper-list { display: none; }
 .paper-list.active { display: flex; flex-direction: column; }
 .paper-item {
-  display: grid; grid-template-columns: minmax(64px, 100px) 1fr;
+  display: grid; grid-template-columns: 100px minmax(0, 1fr);
   gap: 0 32px; padding: 22px 0; border-bottom: 1px solid var(--border);
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color .2s ease, border-color .2s ease;
 }
 .paper-item:hover {
   background: var(--bg2);
-  transform: translateX(8px);
-  box-shadow: -8px 0 24px rgba(79,94,199,0.08);
 }
 .paper-item:last-child { border-bottom: none; }
 .paper-item .paper-title {
@@ -325,20 +337,25 @@ nav {
 }
 .paper-venue { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--acc); letter-spacing: 0.06em; text-transform: none; padding-top: 2px; }
 .paper-venue .year { color: var(--ink3); font-size: 13px; display: block; margin-top: 2px; }
-.paper-title { font-size: 15px; font-weight: 500; line-height: 1.45; margin-bottom: 4px; color: var(--ink); }
-.paper-authors { font-size: 13px; color: var(--ink3); line-height: 1.55; }
-.paper-authors strong { color: var(--ink2); font-weight: 500; }
-.paper-badge { display: inline-block; font-size: 10px; font-family: var(--mono); font-weight: 500; padding: 2px 7px; border-radius: 3px; margin-left: 6px; vertical-align: middle; background: var(--warm); color: #fff; letter-spacing: 0.04em; text-transform: none; }
-.paper-links { display: flex; gap: 5px; margin-top: 7px; flex-wrap: wrap; }
+.paper-title { font-size: 17px; font-weight: 500; line-height: 1.5; margin-bottom: 6px; color: var(--ink); overflow-wrap: break-word; }
+.paper-authors { font-size: 14px; color: var(--ink3); line-height: 1.6; }
+.paper-authors strong { color: var(--ink); font-weight: 600; }
+.paper-badge { display: inline-block; font-size: 11px; font-family: var(--sans); font-weight: 500; line-height: 1.4; padding: 2px 7px; border-radius: 4px; margin-left: 6px; vertical-align: middle; background: var(--badge-bg); color: var(--badge-text); border: 1px solid var(--badge-border); letter-spacing: 0.01em; white-space: nowrap; }
+.paper-links { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
 .paper-link {
-  font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: none;
-  padding: 2px 9px; border: 1px solid var(--border2); border-radius: 3px;
-  color: var(--ink3); text-decoration: none; transition: all .15s;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 32px; padding: 4px 12px;
+  font-family: var(--sans); font-size: 12px; font-weight: 500; line-height: 1.4;
+  border: 1px solid var(--border2); border-radius: 5px;
+  color: var(--ink2); text-decoration: none;
+  transition: color .15s ease, background-color .15s ease, border-color .15s ease;
 }
 .paper-link:hover { border-color: var(--acc); color: var(--acc); background: var(--bg2); }
 .paper-link.code { background: var(--bg2); color: var(--acc); }
-.paper-link.code:hover { background: var(--bg3); }
+.paper-link.code:hover { background: var(--bg3); color: var(--accent-hover); }
+.paper-link:focus-visible, .papers-tab:focus-visible, .btn:focus-visible, footer a:focus-visible { outline: 2px solid var(--acc); outline-offset: 3px; }
 .corr-mark { font-size: 11px; color: var(--warm); margin-left: 1px; vertical-align: super; line-height: 1; }
+.paper-item:hover .corr-mark { color: var(--warm-hover); }
 
 /* ── AWARDS ── */
 .awards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
@@ -349,12 +366,10 @@ nav {
   align-items: flex-start; 
   padding: 14px 0; 
   border-bottom: 1px solid var(--border);
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color .2s ease, border-color .2s ease;
 }
 .award-item:hover {
   background: var(--bg2);
-  transform: translateX(8px);
-  box-shadow: -8px 0 24px rgba(79,94,199,0.08);
 }
 .award-item:last-child { border-bottom: none; }
 .award-dot { 
@@ -367,6 +382,15 @@ nav {
 }
 .award-text { font-size: 14px; line-height: 1.5; color: var(--ink2); margin-bottom: 2px; }
 .award-year { font-family: var(--mono); font-size: 14px; color: var(--ink3); margin-bottom: 4px; }
+
+/* ── TALKS ── */
+.talk-title { font-size: 17px; font-weight: 500; line-height: 1.5; color: var(--ink); margin-bottom: 6px; overflow-wrap: break-word; }
+.talk-workshop { font-size: 14px; line-height: 1.6; color: var(--ink2); margin-bottom: 12px; }
+@media (max-width: 600px) {
+  nav { padding-inline: 16px; }
+  .nav-links { gap: 12px; }
+  .nav-links a { font-size: 12px; letter-spacing: 0.03em; }
+}
 
 /* ── VISITOR MAP ── */
 .visitor-map {
@@ -387,8 +411,8 @@ footer {
   font-family: var(--mono); font-size: 12px; color: var(--ink3); letter-spacing: 0.05em;
 }
 .footer-links { display: flex; gap: 16px; }
-.footer-links a { color: var(--ink3); text-decoration: none; transition: color .2s; }
-.footer-links a:hover { color: var(--acc); }
+footer a { color: var(--ink3); text-decoration: none; transition: color .2s; }
+footer a:hover { color: var(--acc); text-decoration: underline; }
 
 /* ── FADE IN ── */
 .fade-in { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
@@ -400,24 +424,34 @@ footer {
   .avatar-img, .avatar-fallback { width: 80px; height: 80px; }
   .timeline { padding-left: 20px; }
   .timeline::before { left: 4px; }
-  .timeline-item { padding: 16px 18px; margin-bottom: 12px; }
+  .timeline-item { grid-template-columns: 72px minmax(0, 1fr); gap: 0 12px; padding: 16px 18px; margin-bottom: 12px; }
   .timeline-item::before { left: -18px; width: 10px; height: 10px; }
   .timeline-item::after { left: -14px; width: 10px; }
-  .timeline-item:hover { transform: translateY(-2px); }
-  .timeline-date { font-size: 11px; padding: 3px 10px; }
+  .timeline-date { font-size: 11px; padding: 0; }
   .timeline-role { font-size: 15px; }
   .timeline-place { font-size: 13px; }
   .timeline-place::before { display: none; }
   .awards-grid { grid-template-columns: 1fr; gap: 32px; }
-  .paper-item { grid-template-columns: minmax(54px, 80px) 1fr; gap: 0 20px; }
-  .papers-tab { padding: 6px 12px; font-size: 11px; }
+  .paper-item { grid-template-columns: 72px minmax(0, 1fr); gap: 0 16px; padding: 20px 0; }
+  .paper-venue { font-size: 12px; letter-spacing: 0.02em; overflow-wrap: break-word; }
+  .paper-venue .year { font-size: 12px; }
+  .paper-title, .talk-title { font-size: 16px; }
+  .paper-link { min-height: 40px; padding: 6px 13px; }
+  .papers-tabs { flex-wrap: nowrap; overflow-x: auto; padding: 4px 2px 12px; }
+  .papers-tab { flex-shrink: 0; padding: 8px 12px; font-family: var(--sans); font-size: 12px; letter-spacing: 0; }
   .hero-name { font-size: clamp(32px, 10vw, 52px); }
   footer { flex-direction: column; align-items: flex-start; }
 }
 @media (min-width: 601px) and (max-width: 860px) {
-  .timeline-item { padding: 18px 20px; }
-  .paper-item { grid-template-columns: minmax(64px, 90px) 1fr; }
+  .timeline-item { grid-template-columns: 90px minmax(0, 1fr); gap: 0 20px; padding: 18px 20px; }
+  .paper-item { grid-template-columns: 90px minmax(0, 1fr); gap: 0 24px; }
   .awards-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+  .fade-in { opacity: 1; transform: none; }
 }
 
 /* ── PRINT ── */
@@ -443,7 +477,7 @@ footer {
     background: #fff;
     box-shadow: 0 0 0 3px #fff;
   }
-  .timeline-date { background: #e0e0e0; color: #333; }
+  .timeline-date { background: transparent; color: #333; }
   .award-item { border-bottom-color: #ddd; }
 }
 </style>
@@ -456,6 +490,7 @@ footer {
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#publications">Papers</a></li>
+    <li><a href="#talks">Talks</a></li>
     <li><a href="#awards">Awards</a></li>
   </ul>
 </nav>
@@ -476,7 +511,7 @@ footer {
     </div>
   </div>
   <p class="hero-bio">
-    I am a <strong> Research Scientist</strong> at Singapore Management University, working with <strong>Prof. Shengfeng He</strong>. I received my PhD under the supervision of <strong>Prof. Wangmeng Zuo</strong>. My research interests include <strong>low-level vision</strong>, <strong>3D vision</strong>, and <strong>world models</strong>.
+    I am a <strong> Research Scientist</strong> at Singapore Management University, working with <strong>Prof. Shengfeng He</strong>. I received my PhD under the supervision of <strong>Prof. Wangmeng Zuo</strong>. My research interests include <strong>world models</strong>, <strong>3D vision</strong>, and <strong>low-level vision</strong>.
   </p>
   <div class="hero-links">
     <a href="https://scholar.google.com/citations?user=8pIq2N0AAAAJ&hl" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
@@ -506,15 +541,23 @@ footer {
   </div>
   <div class="timeline">
     <div class="timeline-item">
-      <div class="timeline-date">May 2026 — Now</div>
+      <div class="timeline-date">
+        <span>May 2026</span>
+        <span>—</span>
+        <span>Now</span>
+      </div>
       <div>
         <p class="timeline-role">Research Scientist</p>
-        <p class="timeline-place2">Singapore Management University, Singapore</p>
+        <p class="timeline-place timeline-place-city">Singapore Management University, Singapore</p>
         <p class="timeline-detail">Supervisor: Prof. <a href="https://scholar.google.com/citations?user=rBWnK8wAAAAJ&hl" target="_blank" rel="noopener noreferrer">Shengfeng He</a></p>
       </div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-date">Apr 2025 — Apr 2026</div>
+      <div class="timeline-date">
+        <span>Apr 2025</span>
+        <span>—</span>
+        <span>Apr 2026</span>
+      </div>
       <div>
         <p class="timeline-role">Associate Research Fellow (Postdoctoral Researcher)</p>
         <p class="timeline-place">Harbin Institute of Technology, Harbin, China</p>
@@ -522,7 +565,11 @@ footer {
       </div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-date">Aug 2020 — Mar 2025</div>
+      <div class="timeline-date">
+        <span>Aug 2020</span>
+        <span>—</span>
+        <span>Mar 2025</span>
+      </div>
       <div>
         <p class="timeline-role">PhD, Computer Science and Technology</p>
         <p class="timeline-place">Harbin Institute of Technology, Harbin, China</p>
@@ -530,7 +577,11 @@ footer {
       </div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-date">Aug 2016 — Jun 2020</div>
+      <div class="timeline-date">
+        <span>Aug 2016</span>
+        <span>—</span>
+        <span>Jun 2020</span>
+      </div>
       <div>
         <p class="timeline-role">Bachelor, Computer Science and Technology</p>
         <p class="timeline-place">Harbin Institute of Technology, Harbin, China</p>
@@ -554,31 +605,33 @@ footer {
     <button class="papers-tab" onclick="switchTab('lv2')">Multi-Exposure Restoration</button>
     <button class="papers-tab" onclick="switchTab('lv3')">General Restoration</button>
     <button class="papers-tab" onclick="switchTab('lv4')">Self-Supervised Restoration</button>
-    <button class="papers-tab" onclick="switchTab('r4d')">3D/4D Reconstruction</button>
-    <button class="papers-tab" onclick="switchTab('aigc1')">3D/4D Generation</button>
+    <button class="papers-tab" onclick="switchTab('r4d')">3D/4D Reconstruction and Generation</button>
     <button class="papers-tab" onclick="switchTab('aigc2')">Image/Video Generation</button>
+    <button class="papers-tab" onclick="switchTab('wm')">World Models</button>
+
   </div>
 
   <!-- Full List -->
   <div id="tab-full" class="paper-list active">
 
+
     <div class="paper-item"><div class="paper-venue">Preprint<span class="year">2025</span></div><div><p class="paper-title">PhysWorld: From Real Videos to World Models of Deformable Objects via Physics-Aware Demonstration Synthesis</p><p class="paper-authors">Yu Yang, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Xiang Zhang, Yihan Zeng, Hui Li, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://arxiv.org/abs/2510.21447" target="_blank" rel="noopener noreferrer">Paper</a> <a class="paper-link code" href="https://github.com/AlanYoung123/PhysWorld" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://physworld.github.io/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
 
-    <div class="paper-item"><div class="paper-venue">ICME<span class="year">2026</span></div><div><p class="paper-title">MDIQA: Unified Image Quality Assessment for Multi-dimensional Evaluation and Restoration</p><p class="paper-authors">Shunyu Yao, Ming Liu, <strong>Zhilu Zhang</strong>, Zhaolin Wan, Zhilong Ji, Jinfeng Bai, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://arxiv.org/abs/2508.16887" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/YaoShunyu19/MDIQA" target="_blank" rel="noopener noreferrer">Code</a></div></div></div>
+    <!-- <div class="paper-item"><div class="paper-venue">ICME<span class="year">2026</span></div><div><p class="paper-title">MDIQA: Unified Image Quality Assessment for Multi-dimensional Evaluation and Restoration</p><p class="paper-authors">Shunyu Yao, Ming Liu, <strong>Zhilu Zhang</strong>, Zhaolin Wan, Zhilong Ji, Jinfeng Bai, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://arxiv.org/abs/2508.16887" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/YaoShunyu19/MDIQA" target="_blank" rel="noopener noreferrer">Code</a></div></div></div> -->
 
-    <div class="paper-item"><div class="paper-venue">CVPR<span class="year">2026</span></div><div><p class="paper-title">ArtHOI: Taming Foundation Models for Monocular 4D Reconstruction of Hand-Articulated-Object Interactions<span class="paper-badge" style="background-color: transparent; color: #3b82f6; border: 1px solid #3b82f6;">Highlight</span></p><p class="paper-authors">Zikai Wang, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Yiqing Wang, Hui Li, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://arxiv.org/abs/2603.25791" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/hitcs-zikaiwang/ArtHOI-4D-Reconstruction" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://arthoi-reconstruction.github.io/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
+    <div class="paper-item"><div class="paper-venue">CVPR<span class="year">2026</span></div><div><p class="paper-title">ArtHOI: Taming Foundation Models for Monocular 4D Reconstruction of Hand-Articulated-Object Interactions<span class="paper-badge highlight">Highlight</span></p><p class="paper-authors">Zikai Wang, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Yiqing Wang, Hui Li, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://openaccess.thecvf.com/content/CVPR2026/html/Wang_ArtHOI_Taming_Foundation_Models_for_Monocular_4D_Reconstruction_of_Hand-Articulated-Object_CVPR_2026_paper.html" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/hitcs-zikaiwang/ArtHOI-4D-Reconstruction" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://arthoi-reconstruction.github.io/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
 
-    <div class="paper-item"><div class="paper-venue">CVPR<span class="year">2026</span></div><div><p class="paper-title">SelfHVD: Self-Supervised Handheld Video Deblurring</p><p class="paper-authors">Honglei Xu, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Junjie Fan, Xiaohe Wu, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://arxiv.org/abs/2508.08605" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/cshonglei/SelfHVD" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://cshonglei.github.io/SelfHVD/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
+    <div class="paper-item"><div class="paper-venue">CVPR<span class="year">2026</span></div><div><p class="paper-title">SelfHVD: Self-Supervised Handheld Video Deblurring</p><p class="paper-authors">Honglei Xu, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Junjie Fan, Xiaohe Wu, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://openaccess.thecvf.com/content/CVPR2026/html/Xu_SelfHVD_Self-Supervised_Handheld_Video_Deblurring_CVPR_2026_paper.html" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/cshonglei/SelfHVD" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://cshonglei.github.io/SelfHVD/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
 
     <div class="paper-item"><div class="paper-venue">ICLR<span class="year">2026</span></div><div><p class="paper-title">UniRestorer: Universal Image Restoration via Adaptively Estimating Image Degradation at Proper Granularity</p><p class="paper-authors">Jingbo Lin, <strong>Zhilu Zhang</strong>, Wenbo Li, Renjing Pei, Hang Xu, Hongzhi Zhang, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://openreview.net/forum?id=nDrZow7fCF" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/mrluin/UniRestorer" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://mrluin.github.io/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
 
     <div class="paper-item"><div class="paper-venue">ICLR<span class="year">2026</span></div><div><p class="paper-title">DeAltHDR: Learning HDR Video Reconstruction from Degraded Alternating Exposure Sequences</p><p class="paper-authors">Shuohao Zhang, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Rongjian Xu, Xiaohe Wu, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://openreview.net/forum?id=buzIPnGxA8" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/zhang-shuohao/DeAltHDR" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://zhang-shuohao.github.io/DeAltHDR/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
 
-    <div class="paper-item"><div class="paper-venue">ICLR<span class="year">2026</span></div><div><p class="paper-title">MoSA: Motion-Coherent Human Video Generation via Structure-Appearance Decoupling</p><p class="paper-authors">Haoyu Wang, Hao Tang, Donglin Di, <strong>Zhilu Zhang</strong>, Wangmeng Zuo, Feng Gao, Siwei Ma, Shiliang Zhang</p><div class="paper-links"><a class="paper-link" href="https://openreview.net/forum?id=JKIa2rTxdB" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link" href="https://hywang2002.github.io/MoSA/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
+    <div class="paper-item"><div class="paper-venue">ICLR<span class="year">2026</span></div><div><p class="paper-title">MoSA: Motion-Coherent Human Video Generation via Structure-Appearance Decoupling</p><p class="paper-authors">Haoyu Wang, Hao Tang, Donglin Di, <strong>Zhilu Zhang</strong>, Wangmeng Zuo, Feng Gao, Siwei Ma, Shiliang Zhang</p><div class="paper-links"><a class="paper-link" href="https://openreview.net/forum?id=JKIa2rTxdB" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/hywang2002/MoSA" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://hywang2002.github.io/MoSA/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
 
     <div class="paper-item"><div class="paper-venue">AAAI<span class="year">2026</span></div><div><p class="paper-title">Deblur4DGS: 4D Gaussian Splatting from Blurry Monocular Videos</p><p class="paper-authors">Renlong Wu, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Mingyang Chen, Zifei Yan, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://ojs.aaai.org/index.php/AAAI/article/view/38047" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/ZcsrenlongZ/Deblur4DGS" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://deblur4dgs.github.io/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
    
-    <div class="paper-item"><div class="paper-venue">ICME<span class="year">2025</span></div><div><p class="paper-title">Image Demoiréing Using Dual Camera Fusion on Mobile Phones</p><p class="paper-authors">Yanting Mei, <strong>Zhilu Zhang</strong>, Xiaohe Wu, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://ieeexplore.ieee.org/abstract/document/11209149" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/Mrduckk/DCID" target="_blank" rel="noopener noreferrer">Code</a></div></div></div>
+    <!-- <div class="paper-item"><div class="paper-venue">ICME<span class="year">2025</span></div><div><p class="paper-title">Image Demoiréing Using Dual Camera Fusion on Mobile Phones</p><p class="paper-authors">Yanting Mei, <strong>Zhilu Zhang</strong>, Xiaohe Wu, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://ieeexplore.ieee.org/abstract/document/11209149" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/Mrduckk/DCID" target="_blank" rel="noopener noreferrer">Code</a></div></div></div> -->
 
     <div class="paper-item"><div class="paper-venue">IEEE TPAMI<span class="year">2025</span></div><div><p class="paper-title">Self-Supervised Learning for Real-World Super-Resolution from Dual and Multiple Zoomed Observations</p><p class="paper-authors"><strong>Zhilu Zhang</strong>, Ruohao Wang, Hongzhi Zhang, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://ieeexplore.ieee.org/abstract/document/10476716" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/cszhilu1998/SelfDZSR_PlusPlus" target="_blank" rel="noopener noreferrer">Code</a></div></div></div>
     
@@ -590,11 +643,11 @@ footer {
     
     <div class="paper-item"><div class="paper-venue">AAAI<span class="year">2025</span></div><div><p class="paper-title">MV-VTON: Multi-View Virtual Try-On with Diffusion Models</p><p class="paper-authors">Haoyu Wang, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Donglin Di, Shiliang Zhang, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://ojs.aaai.org/index.php/AAAI/article/view/32827" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/hywang2002/MV-VTON" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://hywang2002.github.io/MV-VTON/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
     
-    <div class="paper-item"><div class="paper-venue">ECCV<span class="year">2024</span></div><div><p class="paper-title">Self-Supervised Video Desmoking for Laparoscopic Surgery <span class="paper-badge" style="background-color: transparent; color: #3b82f6; border: 1px solid #3b82f6;">Oral</span></p><p class="paper-authors">Renlong Wu, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Shuohao Zhang, Longfei Gou, Haobin Chen, Lei Zhang, Hao Chen, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://link.springer.com/chapter/10.1007/978-3-031-73220-1_18" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/ZcsrenlongZ/SelfSVD" target="_blank" rel="noopener noreferrer">Code</a></div></div></div>
+    <div class="paper-item"><div class="paper-venue">ECCV<span class="year">2024</span></div><div><p class="paper-title">Self-Supervised Video Desmoking for Laparoscopic Surgery <span class="paper-badge oral">Oral</span></p><p class="paper-authors">Renlong Wu, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Shuohao Zhang, Longfei Gou, Haobin Chen, Lei Zhang, Hao Chen, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://link.springer.com/chapter/10.1007/978-3-031-73220-1_18" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/ZcsrenlongZ/SelfSVD" target="_blank" rel="noopener noreferrer">Code</a></div></div></div>
    
     <div class="paper-item"><div class="paper-venue">ECCV<span class="year">2024</span></div><div><p class="paper-title">Dual-Camera Smooth Zoom on Mobile Phones</p><p class="paper-authors">Renlong Wu, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Yu Yang, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://link.springer.com/chapter/10.1007/978-3-031-72973-7_15" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/ZcsrenlongZ/ZoomGS" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://dualcamerasmoothzoom.github.io/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
     
-    <div class="paper-item"><div class="paper-venue">ICME<span class="year">2024</span></div><div><p class="paper-title">Multi-Attentional Distance for Zero-Shot Classification with Text-to-Image Diffusion Model <span class="paper-badge" style="background-color: transparent; color: #3b82f6; border: 1px solid #3b82f6;">Oral</span></p><p class="paper-authors">Kailai Feng, Minheng Ni, Jiaxiu Jiang, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://ieeexplore.ieee.org/document/10687898" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/Carlofkl/MDC" target="_blank" rel="noopener noreferrer">Code</a></div></div></div>
+    <!-- <div class="paper-item"><div class="paper-venue">ICME<span class="year">2024</span></div><div><p class="paper-title">Multi-Attentional Distance for Zero-Shot Classification with Text-to-Image Diffusion Model <span class="paper-badge oral">Oral</span></p><p class="paper-authors">Kailai Feng, Minheng Ni, Jiaxiu Jiang, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://ieeexplore.ieee.org/document/10687898" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/Carlofkl/MDC" target="_blank" rel="noopener noreferrer">Code</a></div></div></div> -->
 
     <div class="paper-item"><div class="paper-venue">CVPR<span class="year">2024</span></div><div><p class="paper-title">DreamControl: Control-Based Text-to-3D Generation with 3D Self-Prior</p><p class="paper-authors">Tianyu Huang, Yihan Zeng, <strong>Zhilu Zhang</strong>, Wan Xu, Hang Xu, Songcen Xu, Rynson W.H. Lau, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://openaccess.thecvf.com/content/CVPR2024/html/Huang_DreamControl_Control-Based_Text-to-3D_Generation_with_3D_Self-Prior_CVPR_2024_paper.html" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/tyhuang0428/DreamControl" target="_blank" rel="noopener noreferrer">Code</a></div></div></div>
     
@@ -650,6 +703,11 @@ footer {
   <!-- General Restoration -->
   <div id="tab-lv3" class="paper-list">
 
+    <div class="paper-item"><div class="paper-venue">Preprint<span class="year">2026</span></div><div><p class="paper-title">Improving Complex Moiré Removal with Generative Supervision</p><p class="paper-authors">Xinyang Gu, <strong>Zhilu Zhang</strong>, Honglei Xu, Yanting Mei, Yukang Ding, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://arxiv.org/abs/2608.17883" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/xinygu-pavo/WildMoire" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://xinygu-pavo.github.io/WildMoire/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
+
+    <div class="paper-item"><div class="paper-venue">Preprint<span class="year">2026</span></div><div><p class="paper-title">GS-RealBlur: A Flexible Data Acquisition Framework for Real-World Image Deblurring</p><p class="paper-authors">Mingyang Chen, <strong>Zhilu Zhang</strong>, Honglei Xu, Renlong Wu, Xiaohe Wu, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://arxiv.org/abs/2607.15401" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/youngmchan/GS-RealBlur" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://youngmchan.github.io/GS-RealBlur/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
+
+
     <div class="paper-item"><div class="paper-venue">ICME<span class="year">2026</span></div><div><p class="paper-title">MDIQA: Unified Image Quality Assessment for Multi-dimensional Evaluation and Restoration</p><p class="paper-authors">Shunyu Yao, Ming Liu, <strong>Zhilu Zhang</strong>, Zhaolin Wan, Zhilong Ji, Jinfeng Bai, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://arxiv.org/abs/2508.16887" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/YaoShunyu19/MDIQA" target="_blank" rel="noopener noreferrer">Code</a></div></div></div>
 
     <div class="paper-item"><div class="paper-venue">ICLR<span class="year">2026</span></div><div><p class="paper-title">UniRestorer: Universal Image Restoration via Adaptively Estimating Image Degradation at Proper Granularity</p><p class="paper-authors">Jingbo Lin, <strong>Zhilu Zhang</strong>, Wenbo Li, Renjing Pei, Hang Xu, Hongzhi Zhang, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://openreview.net/forum?id=nDrZow7fCF" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/mrluin/UniRestorer" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://mrluin.github.io/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
@@ -673,65 +731,93 @@ footer {
   <!-- Self-Supervised Restoration -->
   <div id="tab-lv4" class="paper-list">
 
-    <div class="paper-item"><div class="paper-venue">CVPR<span class="year">2026</span></div><div><p class="paper-title">SelfHVD: Self-Supervised Handheld Video Deblurring</p><p class="paper-authors">Honglei Xu, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Junjie Fan, Xiaohe Wu, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://arxiv.org/abs/2508.08605" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/cshonglei/SelfHVD" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://cshonglei.github.io/SelfHVD/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
+    <div class="paper-item"><div class="paper-venue">CVPR<span class="year">2026</span></div><div><p class="paper-title">SelfHVD: Self-Supervised Handheld Video Deblurring</p><p class="paper-authors">Honglei Xu, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Junjie Fan, Xiaohe Wu, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://openaccess.thecvf.com/content/CVPR2026/html/Xu_SelfHVD_Self-Supervised_Handheld_Video_Deblurring_CVPR_2026_paper.html" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/cshonglei/SelfHVD" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://cshonglei.github.io/SelfHVD/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
 
     <div class="paper-item"><div class="paper-venue">AAAI<span class="year">2025</span></div><div><p class="paper-title">Rethinking Transformer-Based Blind-Spot Network for Self-Supervised Image Denoising</p><p class="paper-authors">Junyi Li, <strong>Zhilu Zhang</strong>, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://ojs.aaai.org/index.php/AAAI/article/view/32506" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/nagejacob/TBSN" target="_blank" rel="noopener noreferrer">Code</a></div></div></div>
 
-    <div class="paper-item"><div class="paper-venue">ECCV<span class="year">2024</span></div><div><p class="paper-title">Self-Supervised Video Desmoking for Laparoscopic Surgery <span class="paper-badge" style="background-color: transparent; color: #3b82f6; border: 1px solid #3b82f6;">Oral</span></p><p class="paper-authors">Renlong Wu, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Shuohao Zhang, Longfei Gou, Haobin Chen, Lei Zhang, Hao Chen, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://link.springer.com/chapter/10.1007/978-3-031-73220-1_18" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/ZcsrenlongZ/SelfSVD" target="_blank" rel="noopener noreferrer">Code</a></div></div></div>
+    <div class="paper-item"><div class="paper-venue">ECCV<span class="year">2024</span></div><div><p class="paper-title">Self-Supervised Video Desmoking for Laparoscopic Surgery <span class="paper-badge oral">Oral</span></p><p class="paper-authors">Renlong Wu, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Shuohao Zhang, Longfei Gou, Haobin Chen, Lei Zhang, Hao Chen, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://link.springer.com/chapter/10.1007/978-3-031-73220-1_18" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/ZcsrenlongZ/SelfSVD" target="_blank" rel="noopener noreferrer">Code</a></div></div></div>
 
     <div class="paper-item"><div class="paper-venue">CVPR<span class="year">2023</span></div><div><p class="paper-title">Spatially Adaptive Self-Supervised Learning for Real-World Image Denoising</p><p class="paper-authors">Junyi Li, <strong>Zhilu Zhang</strong>, Xiaoyu Liu, Chaoyu Feng, Xiaotao Wang, Lei Lei, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://openaccess.thecvf.com/content/CVPR2023/html/Li_Spatially_Adaptive_Self-Supervised_Learning_for_Real-World_Image_Denoising_CVPR_2023_paper.html" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/nagejacob/SpatiallyAdaptiveSSID" target="_blank" rel="noopener noreferrer">Code</a></div></div></div>
 
   </div>
 
 
-  <!-- 3D/4D Reconstruction -->
+  <!-- 3D/4D Reconstruction and Generation -->
   <div id="tab-r4d" class="paper-list">
    
-    <div class="paper-item"><div class="paper-venue">CVPR<span class="year">2026</span></div><div><p class="paper-title">ArtHOI: Taming Foundation Models for Monocular 4D Reconstruction of Hand-Articulated-Object Interactions<span class="paper-badge" style="background-color: transparent; color: #3b82f6; border: 1px solid #3b82f6;">Highlight</span></p><p class="paper-authors">Zikai Wang, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Yiqing Wang, Hui Li, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://arxiv.org/abs/2603.25791" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/hitcs-zikaiwang/ArtHOI-4D-Reconstruction" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://arthoi-reconstruction.github.io/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
-
+    <div class="paper-item"><div class="paper-venue">CVPR<span class="year">2026</span></div><div><p class="paper-title">ArtHOI: Taming Foundation Models for Monocular 4D Reconstruction of Hand-Articulated-Object Interactions<span class="paper-badge highlight">Highlight</span></p><p class="paper-authors">Zikai Wang, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Yiqing Wang, Hui Li, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://openaccess.thecvf.com/content/CVPR2026/html/Wang_ArtHOI_Taming_Foundation_Models_for_Monocular_4D_Reconstruction_of_Hand-Articulated-Object_CVPR_2026_paper.html" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/hitcs-zikaiwang/ArtHOI-4D-Reconstruction" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://arthoi-reconstruction.github.io/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
 
     <div class="paper-item"><div class="paper-venue">AAAI<span class="year">2026</span></div><div><p class="paper-title">Deblur4DGS: 4D Gaussian Splatting from Blurry Monocular Videos</p><p class="paper-authors">Renlong Wu, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Mingyang Chen, Zifei Yan, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://ojs.aaai.org/index.php/AAAI/article/view/38047" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/ZcsrenlongZ/Deblur4DGS" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://deblur4dgs.github.io/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
     
-  </div>
-
-
-  <!-- 3D/4D Generation -->
-  <div id="tab-aigc1" class="paper-list">
-
-    <div class="paper-item"><div class="paper-venue">Preprint<span class="year">2025</span></div><div><p class="paper-title">PhysWorld: From Real Videos to World Models of Deformable Objects via Physics-Aware Demonstration Synthesis</p><p class="paper-authors">Yu Yang, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Xiang Zhang, Yihan Zeng, Hui Li, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://arxiv.org/abs/2510.21447" target="_blank" rel="noopener noreferrer">Paper</a> <a class="paper-link code" href="https://github.com/AlanYoung123/PhysWorld" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://physworld.github.io/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
-
-    <div class="paper-item"><div class="paper-venue">AAAI<span class="year">2025</span></div><div><p class="paper-title">DreamPhysics: Learning Physics-Based 3D Dynamics with Video Diffusion Priors</p><p class="paper-authors">Tianyu Huang, Haoze Zhang, Yihan Zeng, <strong>Zhilu Zhang</strong>, Hui Li, Wangmeng Zuo, Rynson W. H. Lau</p><div class="paper-links"><a class="paper-link" href="https://ojs.aaai.org/index.php/AAAI/article/view/32389" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/tyhuang0428/DreamPhysics" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://tyhuang0428.github.io/dreamphysics" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
-       
     <div class="paper-item"><div class="paper-venue">CVPR<span class="year">2024</span></div><div><p class="paper-title">DreamControl: Control-Based Text-to-3D Generation with 3D Self-Prior</p><p class="paper-authors">Tianyu Huang, Yihan Zeng, <strong>Zhilu Zhang</strong>, Wan Xu, Hang Xu, Songcen Xu, Rynson W.H. Lau, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://openaccess.thecvf.com/content/CVPR2024/html/Huang_DreamControl_Control-Based_Text-to-3D_Generation_with_3D_Self-Prior_CVPR_2024_paper.html" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/tyhuang0428/DreamControl" target="_blank" rel="noopener noreferrer">Code</a></div></div></div>
-    
-    
+
   </div>
 
 
   <!-- Image/Video Generation -->
   <div id="tab-aigc2" class="paper-list">
 
-    <div class="paper-item"><div class="paper-venue">ICLR<span class="year">2026</span></div><div><p class="paper-title">MoSA: Motion-Coherent Human Video Generation via Structure-Appearance Decoupling</p><p class="paper-authors">Haoyu Wang, Hao Tang, Donglin Di, <strong>Zhilu Zhang</strong>, Wangmeng Zuo, Feng Gao, Siwei Ma, Shiliang Zhang</p><div class="paper-links"><a class="paper-link" href="https://openreview.net/forum?id=JKIa2rTxdB" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link" href="https://hywang2002.github.io/MoSA/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
+    <div class="paper-item"><div class="paper-venue">ICLR<span class="year">2026</span></div><div><p class="paper-title">MoSA: Motion-Coherent Human Video Generation via Structure-Appearance Decoupling</p><p class="paper-authors">Haoyu Wang, Hao Tang, Donglin Di, <strong>Zhilu Zhang</strong>, Wangmeng Zuo, Feng Gao, Siwei Ma, Shiliang Zhang</p><div class="paper-links"><a class="paper-link" href="https://openreview.net/forum?id=JKIa2rTxdB" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/hywang2002/MoSA" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://hywang2002.github.io/MoSA/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
     
     <div class="paper-item"><div class="paper-venue">AAAI<span class="year">2025</span></div><div><p class="paper-title">MV-VTON: Multi-View Virtual Try-On with Diffusion Models</p><p class="paper-authors">Haoyu Wang, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Donglin Di, Shiliang Zhang, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://ojs.aaai.org/index.php/AAAI/article/view/32827" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/hywang2002/MV-VTON" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://hywang2002.github.io/MV-VTON/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
 
-    <div class="paper-item"><div class="paper-venue">ICME<span class="year">2024</span></div><div><p class="paper-title">Multi-Attentional Distance for Zero-Shot Classification with Text-to-Image Diffusion Model <span class="paper-badge" style="background-color: transparent; color: #3b82f6; border: 1px solid #3b82f6;">Oral</span></p><p class="paper-authors">Kailai Feng, Minheng Ni, Jiaxiu Jiang, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://ieeexplore.ieee.org/document/10687898" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/Carlofkl/MDC" target="_blank" rel="noopener noreferrer">Code</a></div></div></div>
+    <div class="paper-item"><div class="paper-venue">ICME<span class="year">2024</span></div><div><p class="paper-title">Multi-Attentional Distance for Zero-Shot Classification with Text-to-Image Diffusion Model <span class="paper-badge oral">Oral</span></p><p class="paper-authors">Kailai Feng, Minheng Ni, Jiaxiu Jiang, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://ieeexplore.ieee.org/document/10687898" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/Carlofkl/MDC" target="_blank" rel="noopener noreferrer">Code</a></div></div></div>
 
-    
   </div>
 
+
+  <!-- World Models -->
+  <div id="tab-wm" class="paper-list">
+
+    <div class="paper-item"><div class="paper-venue">Preprint<span class="year">2025</span></div><div><p class="paper-title">PhysWorld: From Real Videos to World Models of Deformable Objects via Physics-Aware Demonstration Synthesis</p><p class="paper-authors">Yu Yang, <strong>Zhilu Zhang</strong><span class="corr-mark">✉</span>, Xiang Zhang, Yihan Zeng, Hui Li, Wangmeng Zuo</p><div class="paper-links"><a class="paper-link" href="https://arxiv.org/abs/2510.21447" target="_blank" rel="noopener noreferrer">Paper</a> <a class="paper-link code" href="https://github.com/AlanYoung123/PhysWorld" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://physworld.github.io/" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
+
+    <div class="paper-item"><div class="paper-venue">AAAI<span class="year">2025</span></div><div><p class="paper-title">DreamPhysics: Learning Physics-Based 3D Dynamics with Video Diffusion Priors</p><p class="paper-authors">Tianyu Huang, Haoze Zhang, Yihan Zeng, <strong>Zhilu Zhang</strong>, Hui Li, Wangmeng Zuo, Rynson W. H. Lau</p><div class="paper-links"><a class="paper-link" href="https://ojs.aaai.org/index.php/AAAI/article/view/32389" target="_blank" rel="noopener noreferrer">Paper</a><a class="paper-link code" href="https://github.com/tyhuang0428/DreamPhysics" target="_blank" rel="noopener noreferrer">Code</a><a class="paper-link" href="https://tyhuang0428.github.io/dreamphysics" target="_blank" rel="noopener noreferrer">Project</a></div></div></div>
+
+  </div>
+
+
+</section>
+
+<!-- TALKS -->
+<section class="section fade-in" id="talks">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Talks</h2>
+  </div>
+  <article class="paper-item talk-item">
+    <div class="paper-venue">ICIG<time class="year" datetime="2026-10">October 2026</time></div>
+    <div>
+      <h3 class="talk-title">Reconstruction and Modeling for Physical World Interactions</h3>
+      <p class="talk-workshop">Workshop: Visual Intelligence in Transition</p>
+      <div class="paper-links">
+        <a class="paper-link" href="https://icig.csig.org.cn/2026/14104/list.html" target="_blank" rel="noopener noreferrer">Workshop</a>
+        <a class="paper-link code" href="pdf/Physical_World_Interactions.pdf" target="_blank" rel="noopener noreferrer">Slides (PDF)</a>
+      </div>
+    </div>
+  </article>
+  <article class="paper-item talk-item">
+    <div class="paper-venue">VALSE<time class="year" datetime="2026-05">May 2026</time></div>
+    <div>
+      <h3 class="talk-title">Confronting the Data Dilemma in Restoration: Exploring Self-Supervised Image and Video Restoration</h3>
+      <p class="talk-workshop">Workshop on Future Imaging Technologies for End Devices</p>
+      <div class="paper-links">
+        <a class="paper-link" href="https://valser.org/2026/#/workshop" target="_blank" rel="noopener noreferrer">Workshop</a>
+        <a class="paper-link code" href="pdf/Self-superivised_IR.pdf" target="_blank" rel="noopener noreferrer">Slides (PDF)</a>
+      </div>
+    </div>
+  </article>
 </section>
 
 <!-- AWARDS -->
 <section class="section fade-in" id="awards">
   <div class="section-header">
-    <span class="section-num">03</span>
+    <span class="section-num">04</span>
     <h2 class="section-title">Awards & Honors</h2>
   </div>
   <div class="awards-grid">
     <div>
       <p class="award-group-title">Honors & Prizes</p>
-      <div class="award-item"><div class="award-dot"></div><div><p class="award-text"></p>Silver Reviewer, ICML </p><p class="award-year">2026</p></div></div>
+      <div class="award-item"><div class="award-dot"></div><div><p class="award-text">Silver Reviewer, ICML </p><p class="award-year">2026</p></div></div>
       <div class="award-item"><div class="award-dot"></div><div><p class="award-text">Outstanding Doctoral Dissertation of Heilongjiang Provincial Artificial Intelligence Society</p><p class="award-year">2025</p></div></div>
       <!-- <div class="award-item"><div class="award-dot"></div><div><p class="award-text">Outstanding Graduates of Heilongjiang Province</p><p class="award-year">2025</p></div></div> -->
       <div class="award-item"><div class="award-dot"></div><div><p class="award-text">China National Scholarship (Top 2%)</p><p class="award-year">2024</p></div></div>
@@ -790,7 +876,7 @@ footer {
 </footer>
 
 <script>
-const TAB_KEYS = ['full','lv1','lv2','lv3','lv4','r4d','aigc1','aigc2'];
+const TAB_KEYS = ['full','lv1','lv2','lv3','lv4','r4d','aigc2','wm'];
 
 function switchTab(tab) {
   if (!TAB_KEYS.includes(tab)) return;
